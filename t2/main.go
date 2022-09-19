@@ -10,7 +10,7 @@ import (
 
 func main() {
 	numbers := [5]int{2, 4, 6, 8, 10}
-	wg := sync.WaitGroup{} // используем WaitGroup для того, чтобы главный поток не завершился быстро
+	var wg sync.WaitGroup // используем WaitGroup для того, чтобы главный поток не завершился раньше остальных
 
 	for _, number := range numbers {
 		wg.Add(1)

@@ -51,7 +51,7 @@ func main() {
 }
 
 func init() {
-	flag.IntVar(&countWorker, "cw", 0, "count workers") // флаг для запуска -cw [int]
+	flag.IntVar(&countWorker, "cw", 1, "count workers") // флаг для запуска -cw [int]
 	flag.Usage = func() {
 		fmt.Println(usageStr)
 	}

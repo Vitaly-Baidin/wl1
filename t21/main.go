@@ -25,7 +25,7 @@ type USBToTypeC struct {
 }
 
 func (a *USBToTypeC) InsertTypeC() {
-	fmt.Println("Inserting usb Type-C to computer")
+	a.comp.InsertUSB()
 }
 
 func main() {

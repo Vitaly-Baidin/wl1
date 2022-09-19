@@ -17,10 +17,14 @@ func GetValueType(v any) { // можно так, но тогда для кажд
 	case bool:
 		fmt.Println("bool")
 	case chan int:
-		fmt.Println("chan")
+		fmt.Println("chan int")
 	default:
 		fmt.Println("unknown type")
 	}
+}
+
+func GetValueTypeReflection(v any) string { // А можно с помощью рефлексии
+	return reflect.TypeOf(v).Kind().String()
 }
 
 func main() {
@@ -30,10 +34,10 @@ func main() {
 	GetValueType(make(chan int))
 
 	var v any
-	fmt.Println(reflect.TypeOf(v)) // А можно с помощью рефлексии
+	fmt.Println(reflect.TypeOf(v))
 
 	v = make(chan int)
-	fmt.Println(reflect.TypeOf(v).Kind().String())
+	fmt.Println(GetValueTypeReflection(v))
 	v = make(chan chan int)
-	fmt.Println(reflect.TypeOf(v).Kind().String())
+	fmt.Println(GetValueTypeReflection(v))
 }

@@ -15,7 +15,7 @@ func (h *Human) FullName() string {
 }
 
 type Action struct {
-	Human // применяем агрегацию, т.к. наследования в go нет
+	Human // применяем композицию, т.к. наследования в go нет
 }
 
 func main() {

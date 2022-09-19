@@ -38,7 +38,7 @@ func main() {
 }
 
 func init() {
-	flag.IntVar(&timeout, "t", 0, "count workers")
+	flag.IntVar(&timeout, "t", 5, "count workers")
 	flag.Usage = func() {
 		fmt.Println(usageStr)
 	}
