@@ -63,6 +63,7 @@ func main() {
 			intn := rand.Intn(100)
 			if intn > 50 {
 				channel <- 1
+				close(channel)
 				return
 			}
 		}
@@ -71,7 +72,6 @@ func main() {
 		for {
 			select {
 			case <-channel:
-				close(channel)
 				wg.Done()
 				fmt.Println("go close")
 				return
